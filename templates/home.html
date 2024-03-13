@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>News Classifier</h1>
+        <form method="post" action="/">
+            <label for="news">Enter news:</label><br>
+            <textarea id="news" name="text" rows="4" cols="50" placeholder="Paste your news article here..."></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="output">
+            {% if output %}
+                <h2>{{ output }}</h2>
+                <form method="get" action="/">
+                    <button type="submit">Submit Another</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
